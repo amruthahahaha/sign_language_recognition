@@ -7,10 +7,10 @@ import time
 from collections import deque, Counter
 
 # Load model and scaler
-with open('sign_language_model.pkl', 'rb') as f:
+with open('model/sign_language_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-with open('scaler.pkl', 'rb') as f:
+with open('model/scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
 # Initialize MediaPipe
@@ -27,7 +27,7 @@ sentence = ""
 engine = pyttsx3.init()
 
 # Prediction buffer for stability
-prediction_buffer = deque(maxlen=7)  # hold last 5 predictions
+prediction_buffer = deque(maxlen=9)  # hold last 5 predictions
 
 print("🔤 Controls: Enter=Add | Space=Space | S=Speak | C=Clear | Backspace=Delete | Q=Quit")
 
