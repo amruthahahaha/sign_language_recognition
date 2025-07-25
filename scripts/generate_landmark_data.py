@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 import mediapipe as mp
 
-DATA_DIR = r'C:\Users\Naveen\Desktop\sign_language_project\asl_alphabet_train\asl_alphabet_train'
-OUTPUT_FILE = 'asl_landmarks_dataset.npy'
+base_path = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(base_path, '../dataset/asl_alphabet_train')
 
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(static_image_mode=True, max_num_hands=1)
