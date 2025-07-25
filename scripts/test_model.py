@@ -6,8 +6,8 @@ from sklearn.metrics import classification_report
 import joblib
 
 print("📦 Loading landmark data...")
-X = np.load("x_data.npy")
-y = np.load("y_labels.npy")
+X = np.load("data/x_data.npy")
+y = np.load("data/y_labels.npy")
 
 print("🧼 Scaling features...")
 scaler = StandardScaler()
@@ -21,8 +21,8 @@ model = MLPClassifier(hidden_layer_sizes=(100, 100), max_iter=500, random_state=
 model.fit(X_train, y_train)
 
 print("💾 Saving model and scaler...")
-joblib.dump(model, "sign_language_model.pkl")
-joblib.dump(scaler, "scaler.pkl")
+joblib.dump(model, "model/sign_language_model.pkl")
+joblib.dump(scaler, "model/scaler.pkl")
 
 print("✅ Training complete.")
 print("🧪 Evaluating on test set...")
