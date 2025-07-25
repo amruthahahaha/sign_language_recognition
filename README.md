@@ -11,10 +11,28 @@ A real-time American Sign Language (ASL) recognition system that converts hand g
 - Toggleable ASL gesture guide displayed beside the webcam feed
 - Key controls for sentence manipulation and system actions
 
+## Model Training (Optional)
+If you wish to retrain the model:
+1.Download the ASL Alphabet Dataset from Kaggle
+(https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
+2.Extract to this path:
+sign_language_recognition/
+└── dataset/
+    └── asl_alphabet_train/
+        ├── A/
+        ├── B/
+        └── ...
+3.Run the following scripts in order:
+- extract_landmarks_from_asl_dataset.py
+- generate_landmark_data.py
+- train_model.py
+- test_model.py
+
 ## Structure
+- `final_app_tkinter.py` – Main GUI application for real-time sign language recognition
+- `requirements.txt` – List of Python libraries required for running the project
 - `asl_landmarks_dataset.npy` – Full landmark dataset extracted from ASL alphabet images
 - `extract_landmarks_from_asl_dataset.py` – Script to extract landmarks directly from the image dataset
-- `final_app_tkinter.py` – Main GUI application for real-time sign language recognition
 - `generate_landmark_data.py` – Extracts and saves hand landmarks and labels from images
 - `gesture_guide.png` – ASL alphabet image displayed in the GUI as a reference
 - `label_map.npy` – Mapping of label names to encoded numerical values
