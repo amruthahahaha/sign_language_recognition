@@ -4,13 +4,18 @@ import numpy as np
 import pickle
 import pyttsx3
 import time
+import os
 from collections import deque, Counter
 
 # Load model and scaler
-with open('model/sign_language_model.pkl', 'rb') as f:
+base_path = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(base_path, '../model/sign_language_model.pkl')
+scaler_path = os.path.join(base_path, '../model/scaler.pkl')
+
+with open(model_path, 'rb') as f:
     model = pickle.load(f)
 
-with open('model/scaler.pkl', 'rb') as f:
+with open(scaler_path, 'rb') as f:
     scaler = pickle.load(f)
 
 # Initialize MediaPipe
