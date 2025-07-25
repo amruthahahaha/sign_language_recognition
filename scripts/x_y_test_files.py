@@ -2,8 +2,8 @@ import os
 import cv2
 import numpy as np
 
-# ✅ Correct path to your dataset
-data_path = r'C:/Users/Naveen/Desktop/sign_language_project/asl_alphabet_train/asl_alphabet_train'
+# Correct path to your dataset
+data_path = os.path.join('..', 'dataset', 'asl_alphabet_train')
 labels = sorted(os.listdir(data_path))
 
 x_data = []
