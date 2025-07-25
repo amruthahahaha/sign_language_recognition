@@ -4,7 +4,8 @@ import mediapipe as mp
 import numpy as np
 
 # ===== PATH =====
-dataset_path =  "C:\\Users\\Naveen\\Desktop\\sign_language_project\\asl_alphabet_train\\asl_alphabet_train"
+base_path = os.path.dirname(os.path.abspath(__file__))
+dataset_path = os.path.join(base_path, '../dataset/asl_alphabet_train')
 
 # ===== SETUP =====
 mp_hands = mp.solutions.hands
