@@ -13,20 +13,22 @@ A real-time American Sign Language (ASL) recognition system that converts hand g
 
 ## Model Training (Optional)
 If you wish to retrain the model:
-1.Download the ASL Alphabet Dataset from Kaggle
-(https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
-2.Extract to this path:
-sign_language_recognition/
-└── dataset/
-    └── asl_alphabet_train/
-        ├── A/
-        ├── B/
-        └── ...
-3.Run the following scripts in order:
-- extract_landmarks_from_asl_dataset.py
-- generate_landmark_data.py
-- train_model.py
-- test_model.py
+1. Download the ASL Alphabet Dataset from Kaggle  
+   (https://www.kaggle.com/datasets/grassknoted/asl-alphabet)
+2. Extract it to this path:
+   sign_language_recognition/
+   └── dataset/
+       └── asl_alphabet_train/
+           ├── A/
+           ├── B/
+           ├── C/
+           └── ... (up to Z)
+3. Run the following scripts in order:
+   - extract_landmarks_from_asl_dataset.py  
+   - generate_landmark_data.py  
+   - train_model.py  
+   - test_model.py
+
 
 ## Structure
 - `final_app_tkinter.py` – Main GUI application for real-time sign language recognition
