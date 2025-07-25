@@ -12,8 +12,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Load model and scaler
-model = pickle.load(open("sign_language_model.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
+model = pickle.load(open("../model/sign_language_model.pkl"))
+scaler = pickle.load(open("../model/scaler.pkl"))
 
 # Label map
 label_map = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
