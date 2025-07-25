@@ -4,9 +4,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score
+import os
+
+# Set correct relative paths
+base_path = os.path.dirname(os.path.abspath(__file__))
+dataset_path = os.path.join(base_path, "../data/asl_landmarks_dataset.npy")
+model_save_path = os.path.join(base_path, "../model/sign_language_model.pkl")
+scaler_save_path = os.path.join(base_path, "../model/scaler.pkl")
 
 # Load data
-data = np.load('asl_landmarks_dataset.npy', allow_pickle=True).item()
+data = np.load(dataset_path, allow_pickle=True).item()
 X = np.array(data['data'])
 y = np.array(data['labels'])
 
@@ -27,10 +34,10 @@ accuracy = accuracy_score(y_test, model.predict(X_test_scaled))
 print(f"✅ Accuracy: {accuracy * 100:.2f}%")
 
 # Save model and scaler
-with open('sign_language_model.pkl', 'wb') as f:
+with open(model_save_path, 'wb') as f:
     pickle.dump(model, f)
 
-with open('scaler.pkl', 'wb') as f:
+with open(scaler_save_path, 'wb') as f:
     pickle.dump(scaler, f)
 
 print("💾 Model & scaler saved.")
